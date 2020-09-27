@@ -23,23 +23,15 @@ ob_start();
 if(isset($_POST['sub'])) {
     $name = $_POST['name'];
     $pass = $_POST['pass'];
-    $sql = "SELECT name FROM users WHERE pass = $pass";
-    if ($conn->query($sql) === FALSE) {
-        echo "<script>document.getElementById('action').innerHTML = 'Wrong!'</script>";
-        die();
-    }
-    $result = $conn->query($sql);
-    $check = $result->fetch_assoc();
-    print_r($check);
-    if($check['name'] == $name) {
-        echo "<script>document.getElementById('action').innerHTML = 'Success!'</script>";
-
-        $sql = "SELECT id FROM users WHERE pass = $pass";
-        $result = $conn->query($sql);
-        $id = $result->fetch_assoc();
-
-        setcookie("user", $id['id'], time() + (86400 * 30), "/");
-    }
+    $sql = "SELECT pass FROM users WHERE name = $name";
+    if ( !($conn->query($sql)) ) {
+        $sql = "INSERT INTO users (name, pass, exp) VALUES ('$name', $pass, 0)";
+        if($conn->query($sql) === FALSE) {
+            printf("Error: %s\n", $conn->error);
+        };
+    } else {
+        echo '<script>document.getElementById("action").innerHTML = "this account already exists!" ';
+    };
 }
 echo "
 <!DOCTYPE html>
@@ -98,14 +90,14 @@ echo "
                 <i>Elemental 5 is an online browser game where you create elements. No pre-written limitations. The only limitation is your imagination.</i>
             </span> <br/> <br/>
             <span id='action' style='color: green;'></span>
-            <form action='login.php' method='post'>
+            <form action='index.php' method='post'>
                 <span class='small'> Name </span> <br/>
                 <input type='text' id='name' name='name'/> <br/> <br/> 
                 <span class='small'> Password </span> <br/>
                 <input type='text' id='pass' name='pass'/> <br/> <br/> 
                 <input style='width: 20%;' type='submit' value='Go!' name='sub' id='sub'> <br/> <br/> 
             </form>
-            <span class='desc'> here to <a href='#'>register</a>?
+            <span class='desc'> here to <a href='../login/'>login</a>?
         </div>
     </body>
 </html>
