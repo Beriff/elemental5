@@ -2,7 +2,7 @@
     session_start();
 
     if(!isset($_COOKIE["user"])) {
-        echo "<script type='text/javascript'>location.href = 'login/login.php';</script>";
+        echo "<script type='text/javascript'>location.href = 'login/';</script>";
     }
 ?>
 
