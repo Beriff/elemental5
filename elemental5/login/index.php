@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(isset($_COOKIE["user"])) {
+    echo "<script type='text/javascript'>location.href = '../';</script>";
+}
+
 $state = "Login";
 
 $servername = "localhost";
