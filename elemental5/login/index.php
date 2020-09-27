@@ -98,14 +98,14 @@ echo "
                 <i>Elemental 5 is an online browser game where you create elements. No pre-written limitations. The only limitation is your imagination.</i>
             </span> <br/> <br/>
             <span id='action' style='color: green;'></span>
-            <form action='login.php' method='post'>
+            <form action='index.php' method='post'>
                 <span class='small'> Name </span> <br/>
                 <input type='text' id='name' name='name'/> <br/> <br/> 
                 <span class='small'> Password </span> <br/>
                 <input type='text' id='pass' name='pass'/> <br/> <br/> 
                 <input style='width: 20%;' type='submit' value='Go!' name='sub' id='sub'> <br/> <br/> 
             </form>
-            <span class='desc'> here to <a href='#'>register</a>?
+            <span class='desc'> here to <a href='../register/'>register</a>?
         </div>
     </body>
 </html>
