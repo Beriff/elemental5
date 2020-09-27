@@ -2,7 +2,10 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import urllib.parse as parse
 import json
 
-elements = "<html><body>Hello</body></html>"
+with open('elements.json') as f:
+    data = json.load(f)
+
+elements = data
 fields = None
 
 
