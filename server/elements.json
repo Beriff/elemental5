@@ -1,0 +1,13 @@
+{
+    "5": {
+        "id": 5,
+        "name": "dust",
+        "desc": "commonly found on willem's monitor",
+        "color": "#C5C5C5",
+
+        "formulas": {
+            "1": [1, 4]
+        }
+
+    }
+}
