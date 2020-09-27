@@ -1,4 +1,41 @@
 {
+    "1": {
+        "id": 1,
+        "name": "earth",
+        "desc": "tastes like dirt",
+        "color": "#D2691E",
+
+        "formulas": {}
+    },
+
+    "2": {
+        "id": 2,
+        "name": "air",
+        "desc": "tastes like dirt...?",
+        "color": "#AEFFFD",
+
+        "formulas": {}
+    },
+
+    "3": {
+        "id": 3,
+        "name": "water",
+        "desc": "tastes like...",
+        "color": "#3D68FF",
+
+        "formulas": {}
+    },
+
+    "4": {
+        "id": 4,
+        "name": "fire",
+        "desc": "tastes like... ouch!",
+        "color": "#FF764A",
+
+        "formulas": {}
+    },
+
+    
     "5": {
         "id": 5,
         "name": "dust",
